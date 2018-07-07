@@ -6,6 +6,7 @@
  * -2: Zip Code Not Provided Error
  * -3: Zip Code Not Valid Error
  * -4: Exception Thrown Error
+ * -5: Missing historical data
  *
  * Allowed $_GET['restriction']
  * -1: No restrictions
@@ -15,8 +16,9 @@
 
 // Zip code verification function
 function verifyZip($zip) {
-	$ch = curl_init("signal.when2water.org/zipVerify.php?zip=" . $zip);
+	$ch = curl_init("https://signal.when2water.org/zipVerify.php?zip=" . $zip);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 	$verify = curl_exec($ch);
 	curl_close($ch);
 	if ($verify === "0") {

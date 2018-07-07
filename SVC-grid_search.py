@@ -83,4 +83,4 @@ enPickle(gridModelGen, "grid_search_gen.pickle")
 enPickle(gridModelFocus, "grid_search_focus.pickle")
 print("Saved modelGen and modelFocus to pickle files")
 
-interact(gl=globals(), lo=locals())
+#interact(gl=globals(), lo=locals())

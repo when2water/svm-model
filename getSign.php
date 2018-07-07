@@ -66,7 +66,7 @@ if ($missingData === False) {
 	$precipPred3day = (float) array_sum($precipPred3day);
 
 	// TODO send the variables to the python script
-	$program = "/home2/whentwow/bin/python SVC-make_pred.py";
+	$program = "python3 SVC-make_pred.py";
 	$params = sprintf("%f %f %f %f %f %f %f %f %f %f",
 		$highCur, $highPast3day, $highPred3day,
 		$lowCur ,  $lowPast3day,  $lowPred3day,
