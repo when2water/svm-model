@@ -1,0 +1,6 @@
+*.pyc
+error_log*
+*.pickle
+errors.txt
+make_pred.log
+signs.log
