@@ -16,7 +16,7 @@
 
 // Zip code verification function
 function verifyZip($zip) {
-	$ch = curl_init("https://signal.when2water.org/zipVerify.php?zip=" . $zip);
+	$ch = curl_init(getenv("SIGNAL_SERVER") . "/zipVerify.php?zip=" . $zip);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 	$verify = curl_exec($ch);

@@ -1,11 +1,12 @@
 <?php
 
 // Read any stored historical data into correct format
-$fName = "/data" . "/$zip.txt";
+$fName = getenv("DATA_LOCATION") . "/$zip.txt";
 if (!file_exists($fName)) {
-	$zipReg = fopen("/data" . "/zips.txt", "a+");
+	$zipReg = fopen(getenv("DATA_LOCATION") . "/zips.txt", "a+");
 	fwrite($zipReg, "$zip\n");
 	fclose($zipReg);
+	touch($fName);
 }
 $f = fopen($fName, "r");
 rewind($f);
