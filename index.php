@@ -72,11 +72,7 @@ try {
 } catch (Exception $e) {
 	// catch errors
 	// $e->getMessage();
-	$f = fopen("errors.txt", "a+");
-	fwrite($f, $e->getMessage());
-	fwrite($f, "->".date(DATE_RFC850)."\n");
-	fclose($f);
-
+	error_log($e->getMessage());
 	$code = -4;
 }
 // ob_end_clean();
